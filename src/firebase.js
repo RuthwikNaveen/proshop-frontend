@@ -1,16 +1,16 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 import { getAuth } from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
 
+// THIS IS THE FIX: The config now reads from environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyAUGusZglfxsarM9xMQ1hfu8lcTmU4s2qw",
-  authDomain: "proshop-marketplace.firebaseapp.com",
-  projectId: "proshop-marketplace",
-  storageBucket: "proshop-marketplace.firebasestorage.app",
-  messagingSenderId: "986777162527",
-  appId: "1:986777162527:web:35df823270216ff2d0162a",
-  measurementId: "G-N44DPX3NVR"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
