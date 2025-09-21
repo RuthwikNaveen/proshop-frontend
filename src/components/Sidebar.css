@@ -1,0 +1,33 @@
+.sidebar-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.category-filters {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.price-slider {
+  padding: 10px 15px 0 15px;
+}
+
+.price-slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Custom styles for rc-slider */
+.rc-slider-track {
+  background-color: #0d6efd;
+}
+
+.rc-slider-handle {
+  border-color: #0d6efd;
+  box-shadow: 0 0 5px #0d6efd;
+}

@@ -1,0 +1,132 @@
+/* --- A More Robust Global Layout --- */
+
+/* Apply the gradient and the new font to the entire page */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif !important;
+  background-color: #f0f5fa; /* A fallback for older browsers */
+  background-image: linear-gradient(to bottom, #eaf2f8 0%, #ffffff 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* --- Custom Component Styles --- */
+
+/* Custom Navbar Gradient */
+.navbar-gradient {
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+
+/* Custom Navbar Text Color */
+.navbar-gradient .navbar-brand,
+.navbar-gradient .nav-link,
+.navbar-gradient .dropdown-toggle {
+  color: #0d2c54 !important;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar-gradient .nav-link:hover,
+.navbar-gradient .navbar-brand:hover,
+.navbar-gradient .dropdown-toggle:hover {
+  color: #001f3f !important;
+}
+
+/* Centered and Larger Search Form */
+.search-form-large {
+  max-width: 500px;
+  width: 100%;
+}
+
+.search-form-large .form-control-lg {
+  border-radius: 30px !important;
+  padding-left: 20px;
+}
+
+.search-form-large .btn-lg {
+  border-radius: 30px !important;
+  margin-left: -55px;
+  z-index: 5;
+  border: none;
+  background-color: transparent;
+  color: #6c757d;
+}
+
+.search-form-large .btn-lg:hover {
+  background-color: transparent;
+  color: #212529;
+}
+
+/* Success Tick Animation Styles */
+.success-animation {
+  margin: auto;
+}
+
+.checkmark {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 4;
+  stroke: #4CAF50;
+  stroke-miterlimit: 10;
+  margin: 0 auto;
+  box-shadow: inset 0px 0px 0px #4CAF50;
+  animation: fill-effect 0.4s ease-in-out 0.4s forwards,
+    scale-effect 0.4s ease-in-out 0.9s both;
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+  stroke: #4CAF50;
+  fill: none;
+  animation: stroke-effect 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke-effect 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke-effect {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale-effect {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.15, 1.15, 1);
+  }
+}
+
+@keyframes fill-effect {
+  100% {
+    box-shadow: inset 0px 0px 0px 50px #4CAF50;
+    stroke: #fff;
+  }
+}
+
